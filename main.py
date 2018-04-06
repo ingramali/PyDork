@@ -7,6 +7,8 @@ https://stackoverflow.com/questions/3305926/python-csv-string-to-array
 https://medium.freecodecamp.org/how-to-scrape-websites-with-python-and-beautifulsoup-5946935d93fe
 https://stackoverflow.com/questions/20449427/how-can-i-read-inputs-as-integers //maybe useful as extra options
 https://docs.python.org/2/library/urlparse.html
+https://stackoverflow.com/questions/6838238/comparing-a-string-to-multiple-items-in-python
+  https://stackoverflow.com/questions/663171/is-there-a-way-to-substring-a-string-in-python
 */
 
 IMPORTS GO UP HERE
