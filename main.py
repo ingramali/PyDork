@@ -1,5 +1,5 @@
-//THIS is just psuedocode for now
-/*
+#THIS is just psuedocode for now
+'''
 Ideas from:
 https://www.exploit-db.com/ghdb/4309/
 https://github.com/abenassi/Google-Search-API
@@ -9,50 +9,50 @@ https://stackoverflow.com/questions/20449427/how-can-i-read-inputs-as-integers /
 https://docs.python.org/2/library/urlparse.html
 https://stackoverflow.com/questions/6838238/comparing-a-string-to-multiple-items-in-python
   https://stackoverflow.com/questions/663171/is-there-a-way-to-substring-a-string-in-python
-*/
+'''
 
-IMPORTS GO UP HERE
+#IMPORTS GO UP HERE
 
 
-//Here is da google dork with escape characters :-)
+#Here is da google dork with escape characters :-)
 dork = "intext:\"Dumping data for table \`orders\`\""
 
 dork += "-git -hack -exploit -dork -cod -cyber" //Default ignored tags
 
-/* STEP 1:
+''' STEP 1:
 ask for ignored tags with comma seperated values
 because google dorks often pull up a lot of exploit databases and blogs
-*/
+'''
 ignore = input("Enter ignored tags with csv. Default ignored tags are: -git -hack -exploit -dork -cod -cyber")
-/* EXAMPLE:
+''' EXAMPLE:
 >>> a = "1,2"
 >>> a
 '1,2'
 >>> b = a.split(",")
 >>> b
 ['1', '2']
-*/
-//Parse to String array:
+'''
+#Parse to String array:
 tags = ignore.split(",")
 
-//STEP 2: Append modifiers to google dork
+#STEP 2: Append modifiers to google dork
 for tag in tags:
   dork += "-" + tag + " "
 
-// STEP 3: search google dork with google search api
+#STEP 3: search google dork with google search api
 
 num_page = 1 //Just does the first page in google
 search_results = google.search("This is my query", num_page)
 
-STEP 4: scrape those pages in google with beautiful soup web scraper
+#STEP 4: scrape those pages in google with beautiful soup web scraper
 
-//make a 2d array of strings called pages
+#make a 2d array of strings called pages
 
 for result in search_results //GoogleResult object
   //add str(BeautifulSoup(result.link, ‘html.parser’)) to layer 1 of pages (adds the string-ified html)
   //add str(urlparse(result.link).netloc) to correspond with ^^^ (adds the homepage url)
   
-/*
+'''
 So in my mind it kinda looks like this:
 
 |-------------|-------------|
@@ -60,9 +60,10 @@ So in my mind it kinda looks like this:
 |-------------|-------------|  ETC.
 |PAGE1.com    |PaGe2.net    |             <-----pages[1]
 |-------------|-------------|
-*/
+'''
 
-//STEP 5: create another 2d array called Phone_nums
+#STEP 5: create another 2d array called Phone_nums
+
 goodchars= {"1",
 "2",
 "3",
@@ -74,9 +75,10 @@ goodchars= {"1",
 "9",
 "+",
 "-",
+".",
 " ",
 "(",
-")"} //a bit tedious, I know:
+")"} #a bit tedious, I know:
 for pagehtml in pages[0]:
   phonenums = ""
   phonelength = 0 //counts length of stored numbers
@@ -94,12 +96,12 @@ for pagehtml in pages[0]:
         else
           phonenums += ","
 
-  //in 2d array pages, replace ex. "HTML OF PAGE1" with phonenums.split(",")
+  #in 2d array pages, replace ex. "HTML OF PAGE1" with phonenums.split(",")
 
-/*
+'''
 AND FINALLY:
 VISUALIZE
 pages
-*/
+'''
 
-//Yay now you may have some phone numbers associated with purchases on the website. 
+#Yay now you may have some phone numbers associated with purchases on the website. 
