@@ -1,4 +1,4 @@
-#THIS is just psuedocode for now
+#I haven't run this through an ide or anything so it'll probably crash
 '''
 Ideas from:
 https://www.exploit-db.com/ghdb/4309/
@@ -9,10 +9,13 @@ https://stackoverflow.com/questions/20449427/how-can-i-read-inputs-as-integers /
 https://docs.python.org/2/library/urlparse.html
 https://stackoverflow.com/questions/6838238/comparing-a-string-to-multiple-items-in-python
 https://stackoverflow.com/questions/663171/is-there-a-way-to-substring-a-string-in-python
+https://www.dotnetperls.com/2d-python
 '''
 
 #IMPORTS GO UP HERE
-
+from google import google
+from bs4 import BeautifulSoup
+form urlparse import urlparse
 
 #Here is da google dork with escape characters :-)
 dork = "intext:\"Dumping data for table \`orders\`\""
@@ -45,12 +48,20 @@ num_page = 1 //Just does the first page in google
 search_results = google.search("This is my query", num_page)
 
 #STEP 4: scrape those pages in google with beautiful soup web scraper
+pages = []
+pages.append([])
+pages.append([])
+''' EXAMPLE:
+# Add elements to empty lists.
+elements[0].append(1)
+elements[0].append(2)
 
-#make a 2d array of strings called pages
-
-for result in search_results //GoogleResult object
-  //add str(BeautifulSoup(result.link, ‘html.parser’)) to layer 1 of pages (adds the string-ified html)
-  //add str(urlparse(result.link).netloc) to correspond with ^^^ (adds the homepage url)
+elements[1].append(3)
+elements[1].append(4)
+'''
+for result in search_results: //GoogleResult object
+  pages[0].append(str(BeautifulSoup(result.link, ‘html.parser’)) to layer 1 of pages (adds the string-ified html))
+  pages[1].append(add str(urlparse(result.link).netloc) to correspond with ^^^ (adds the homepage url))
   
 '''
 So in my mind it kinda looks like this:
@@ -61,8 +72,6 @@ So in my mind it kinda looks like this:
 |PAGE1.com    |PaGe2.net    |             <-----pages[1]
 |-------------|-------------|
 '''
-
-#STEP 5: create another 2d array called Phone_nums
 
 goodchars= {"1",
 "2",
@@ -83,7 +92,7 @@ for pagehtml in pages[0]:
   phonenums = ""
   phonelength = 0 //counts length of stored numbers
   count = 0
-  while(count < len(pagehtml)
+  while count < len(pagehtml):
     if phonelength >= 20:
       phonenums= phonenums[:phonelength-1] //THIS LINE IS VERY SKETCH IF ERROR LOOK @ HERE
       phonelength = 0
@@ -93,15 +102,15 @@ for pagehtml in pages[0]:
       else:
         if phonelength < 10
           phonenums= phonenums[:phonelength-1] //THIS LINE IS VERY SKETCH IF ERROR LOOK @ HERE
-        else
-          phonenums += ","
-
-  #in 2d array pages, replace ex. "HTML OF PAGE1" with phonenums.split(",")
-
+        else:
+          phonenums += ", "
+  pages[0] = []
+  pages[0].append(phonenums)
+  
 '''
 AND FINALLY:
 VISUALIZE
 pages
 '''
-
-#Yay now you may have some phone numbers associated with purchases on the website. 
+print(pages)
+#Yay now you may have some phone numbers associated with purchases on the website.
