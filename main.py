@@ -8,7 +8,7 @@ https://medium.freecodecamp.org/how-to-scrape-websites-with-python-and-beautiful
 https://stackoverflow.com/questions/20449427/how-can-i-read-inputs-as-integers //maybe useful as extra options
 https://docs.python.org/2/library/urlparse.html
 https://stackoverflow.com/questions/6838238/comparing-a-string-to-multiple-items-in-python
-  https://stackoverflow.com/questions/663171/is-there-a-way-to-substring-a-string-in-python
+https://stackoverflow.com/questions/663171/is-there-a-way-to-substring-a-string-in-python
 '''
 
 #IMPORTS GO UP HERE
