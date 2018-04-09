@@ -99,9 +99,13 @@ for pagehtml in pages[0]:
     else:
       if pagehtml[count:count+1] in goodchars:
         phonenums += pagehtml[count:count+1]
+      else if "555" in phonenums:
+        phonenums= phonenums[:phonelength-1] //THIS LINE IS VERY SKETCH IF ERROR LOOK @ HERE
+        phonelength = 0
       else:
         if phonelength < 10
           phonenums= phonenums[:phonelength-1] //THIS LINE IS VERY SKETCH IF ERROR LOOK @ HERE
+          phonelength = 0
         else:
           phonenums += ", "
   pages[0] = []
